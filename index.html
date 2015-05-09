@@ -1,0 +1,149 @@
+<html>
+	<head>
+		<title></title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+		<link rel="stylesheet" href="main.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.torque-calculator form').keyup(function() {
+					var torque = $('.torque-calculator #torque').val();
+					var length = $('.torque-calculator #length').val();
+					var diameter = $('.torque-calculator #diameter').val();
+					var angle = $('.torque-calculator #angle').val();
+					var g = 12000000;
+						// if(diameter < 0.025)
+
+					// if() torque *= 2;
+					// if() length *= 2;
+					// if() diameter *= 2;
+					// if() angle *= 2;
+
+					//a = C*T*L/G*D^4
+					if(torque === "" && length != "" && diameter != "" && angle != "") {
+						$('.torque-calculator #output').html("Torque: " + (angle * g * Math.pow(diameter, 4))/(36.5 * length));
+					}
+					else if(torque != "" && length === "" && diameter != "" && angle != "") {
+						$('.torque-calculator #output').html("Length: " + (angle * g * Math.pow(diameter, 4))/(36.5 * torque));
+					}
+					else if(torque != "" && length != "" && diameter === "" && angle != "") {
+						$('.torque-calculator #output').html("Diameter: " + Math.pow((36.5 * torque * length)/(angle * g), 0.25));
+					}
+					else if(torque != "" && length != "" && diameter != "" && angle === "") {
+						$('.torque-calculator #output').html("Angle: " + (36.5 * torque * length)/(g * Math.pow(diameter, 4)));
+					}
+					else if(torque != "" && length != "" && diameter != "" && angle != "") {
+						$('.torque-calculator #output').html("Error: Please leave one field blank.");
+					}
+					else {
+						$('.torque-calculator #output').html("");
+					}
+				});
+				$('.balsa-density-calculator form').keyup(function() {
+					var thickness = $('.balsa-density-calculator #thickness').val();
+					var width = $('.balsa-density-calculator #width').val();
+					var length = $('.balsa-density-calculator #length').val();
+					var mass = $('.balsa-density-calculator #mass').val();
+
+					if(thickness > 0 && width > 0 && length > 0 && mass > 0) {
+						$('.balsa-density-calculator #output').html("Density: " + 3.80958789*mass/(thickness * width * length) + " pounds per cubic foot");
+					}
+					else {
+						$('.balsa-density-calculator #output').html("");
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="jumbotron"></div>
+
+		<div class="tagline">Free Flight: Utilities</div>
+
+		<div class="container">
+			<div class="torque-calculator">
+				<h3>Torque Calculator</h3>
+				<p>Enter values for three of the four fields and select appropriate units.</p>
+				<form>
+					<label>Torque</label>
+					<input type="number" placeholder="Torque" step="0.01" id="torque"></input>
+					<select id="torque-units">
+						<option value="in-oz.">in-oz.</option>
+						<option value="gram-cm.">gram-cm.</option>
+					</select>
+					</br>
+					<label>Length</label>
+					<input type="number" placeholder="Length" step="0.01" id="length"></input>
+					<select id="length-units">
+						<option>inches</option>
+						<option>centimeters</option>
+					</select>
+					</br>
+					<label>Diameter</label>
+					<input type="number" placeholder="Diameter" step="0.001" id="diameter"></input>
+					<select id="diameter-units">
+						<option>inches</option>
+						<option>centimeters</option>
+					</select>
+					</br>
+					<label>Angle</label>
+					<input type="number" placeholder="Angle" step="1.00" id="angle"></input>
+					<select id="angle-units">
+						<option>degrees</option>
+						<option>radians</option>
+					</select>
+					</br>
+					<!--a = C*T*L/G*D^4
+					a = angle of pointer deflection in degrees (degrees)
+					C = constant: 36.5 (584)
+					T = torque in inch-ounces (newton-millimeters)
+					L = length of the music wire torsional element in inches (millimeters)
+					D = diameter of the music wire torsional element in inches (millimeters)
+					G = torsional Modulus of Elasticity for music wire in pounds/square inch-->
+				</form>
+				<p id="output"></p>
+			</div>
+
+			<div class="balsa-density-calculator">
+				<h3>Balsa Density Calculator</h3>
+				<p>Enter values for all three fields and select appropriate units.</p>
+				<form>
+					<label>Thickness</label>
+					<input type="number" placeholder="Thickness" step="0.015625" id="thickness"></input>
+					<select id="thickness-units">
+						<option>inches</option>
+						<option>centimeters</option>
+					</select>
+					</br>
+					<label>Width</label>
+					<input type="number" placeholder="Width" step="1.00" id="width"></input>
+					<select id="width-units">
+						<option>inches</option>
+						<option>centimeters</option>
+					</select>
+					</br>
+					<label>Length</label>
+					<input type="number" placeholder="Length" step="1.00" id="length"></input>
+					<select id="length-units">
+						<option>inches</option>
+						<option>centimeters</option>
+					</select>
+					</br>
+					<label>Mass</label>
+					<input type="number" placeholder="Mass" step="0.01" id="mass"></input>
+					<select id="mass-units">
+						<option>grams</option>
+						<option>pounds</option>
+					</select>
+					</br>
+				</form>
+				<p id="output"></p>
+			</div>
+		</div>
+		<div class="footer"></div>
+	</body>
+
+</html>
