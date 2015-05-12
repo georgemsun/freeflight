@@ -1,14 +1,21 @@
 <html>
 	<head>
-		<title></title>
+		<title>Utilities | Free Flight</title>
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-		<link rel="stylesheet" href="main.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+		<!--jquery.min.js--><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<!--shift.css--><link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+		<!--bootstrap.css--><!-- <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css"> -->
+		<!--main.css--><link rel="stylesheet" href="main.css">
+		<!--google fonts--><link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
 
 		<script type="text/javascript">
 			$(document).ready(function() {
+				$('.nav > li').bind('mouseover', function() {
+					$(this).find('ul').css('visibility', 'visible');
+				});
+				$('.nav > li').bind('mouseout', function() {
+					$(this).find('ul').css('visibility', 'hidden');
+				});
 				$('.torque-calculator form').keyup(function() {
 					var torque = $('.torque-calculator #torque').val();
 					var length = $('.torque-calculator #length').val();
@@ -17,7 +24,7 @@
 					var g = 12000000;
 						// if(diameter < 0.025)
 
-					// if() torque *= 2;
+					// if($('#torque-units option:selected').text() = "gram-cm.") torque *= 72.0077887;
 					// if() length *= 2;
 					// if() diameter *= 2;
 					// if() angle *= 2;
@@ -60,6 +67,41 @@
 	</head>
 	<body>
 		<div class="jumbotron"></div>
+
+		<div class="container">
+			<ul class="nav">
+				<li><a id="nav-head" href="#">TITLE 1</a>
+					<ul>
+						<li><a href="#">Menu Item 1</a></li>
+						<li><a href="#">Menu Item 2</a></li>
+						<li><a href="#">Menu Item 3</a></li>
+						<li><a href="#">Menu Item 4</a></li>
+						<li><a href="#">Menu Item 5</a></li>
+						<li><a href="#">Menu Item 6</a></li>
+					</ul>
+				</li>
+				<li><a id="nav-head" href="#">TITLE 2</a>
+					<ul>
+						<li><a href="#">Menu Item 1</a></li>
+						<li><a href="#">Menu Item 2</a></li>
+						<li><a href="#">Menu Item 3</a></li>
+						<li><a href="#">Menu Item 4</a></li>
+						<li><a href="#">Menu Item 5</a></li>
+						<li><a href="#">Menu Item 6</a></li>
+					</ul>
+				</li>
+				<li><a id="nav-head" href="#">TITLE 3</a>
+					<ul>
+						<li><a href="#">Menu Item 1</a></li>
+						<li><a href="#">Menu Item 2</a></li>
+						<li><a href="#">Menu Item 3</a></li>
+						<li><a href="#">Menu Item 4</a></li>
+						<li><a href="#">Menu Item 5</a></li>
+						<li><a href="#">Menu Item 6</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 
 		<div class="tagline">Free Flight: Utilities</div>
 
