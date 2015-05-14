@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Utilities | Free Flight</title>
+		<title>Free Flight</title>
 
 		<!--jquery.min.js--><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<!--shift.css--><link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
@@ -10,6 +10,39 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
+				var resetNav = function() {
+					$('.home, .indoor-duration, .science-olympiad, .utilities').css('visibility', 'hidden');
+					// $('.nav li a:link, .nav li a:visited').css('color', 'grey');
+				}
+
+				$('.nav-home').click(function() {
+					resetNav();
+					$('.home').css('visibility', 'visible');
+					$('.nav-home').css('color', 'black');
+					$('title').html("Free Flight");
+				});
+
+				$('.nav-indoor-duration').click(function() {
+					resetNav();
+					$('.indoor-duration').css('visibility', 'visible');
+					$('.nav-indoor-duration').css('color', 'black');
+					$('title').html("Indoor Duration | Free Flight");
+				});
+
+				$('.nav-science-olympiad').click(function() {
+					resetNav();
+					$('.science-olympiad').css('visibility', 'visible');
+					$('.nav-science-olympiad').css('color', 'black');
+					$('title').html("Science Olympiad | Free Flight");
+				});
+
+				$('.nav-utilities, .nav-utilities-torque, .nav-utilities-balsa-density').click(function() {
+					resetNav();
+					$('.utilities').css('visibility', 'visible');
+					$('.nav-utilities').css('color', 'black');
+					$('title').html("Utilities | Free Flight");
+				});
+
 				$('.nav > li').bind('mouseover', function() {
 					$(this).find('ul').css('visibility', 'visible');
 				});
@@ -68,44 +101,63 @@
 	<body>
 		<div class="jumbotron"></div>
 
+		
+		<div class="tagline">
+			<div class="container">Free Flight</div>
+		</div>
+
 		<div class="container">
 			<ul class="nav">
-				<li><a id="nav-head" href="#">TITLE 1</a>
+				<li><a id="nav-head" href="#" class="nav-home">Home</a></li>
+				<li><a id="nav-head" href="#" class="nav-indoor-duration">Indoor Duration</a>
 					<ul>
-						<li><a href="#">Menu Item 1</a></li>
-						<li><a href="#">Menu Item 2</a></li>
-						<li><a href="#">Menu Item 3</a></li>
-						<li><a href="#">Menu Item 4</a></li>
-						<li><a href="#">Menu Item 5</a></li>
-						<li><a href="#">Menu Item 6</a></li>
+						<li><a href="#">Articles: Concepts</a></li>
+						<li><a href="#">Guides: How To</a></li>
+						<li><a href="#">Photos</a></li>
 					</ul>
 				</li>
-				<li><a id="nav-head" href="#">TITLE 2</a>
+				<li><a id="nav-head" href="#" class="nav-science-olympiad">Science Olympiad</a>
 					<ul>
-						<li><a href="#">Menu Item 1</a></li>
-						<li><a href="#">Menu Item 2</a></li>
-						<li><a href="#">Menu Item 3</a></li>
-						<li><a href="#">Menu Item 4</a></li>
-						<li><a href="#">Menu Item 5</a></li>
-						<li><a href="#">Menu Item 6</a></li>
+						<li><a href="#">Rules</a></li>
+						<li><a href="#">Elastic Launched Glider</a></li>
+						<li><a href="#">Wright Stuff</a></li>
 					</ul>
 				</li>
-				<li><a id="nav-head" href="#">TITLE 3</a>
+				<li><a id="nav-head" href="#" class="nav-utilities">Utilities</a>
 					<ul>
-						<li><a href="#">Menu Item 1</a></li>
-						<li><a href="#">Menu Item 2</a></li>
-						<li><a href="#">Menu Item 3</a></li>
-						<li><a href="#">Menu Item 4</a></li>
-						<li><a href="#">Menu Item 5</a></li>
-						<li><a href="#">Menu Item 6</a></li>
+						<li><a href="#" class="nav-utilities-torque">Torque Calculator</a></li>
+						<li><a href="#" class="nav-utilities-balsa-density">Balsa Density Calculator</a></li>
 					</ul>
 				</li>
 			</ul>
 		</div>
 
-		<div class="tagline">Free Flight: Utilities</div>
+		<div class="container home">
+		</div>
 
-		<div class="container">
+		<div class="container indoor-duration">
+			<div class="articles">
+				<h3>Articles</h3>
+				<p></p>
+				<h3>Guides</h3>
+				<p></p>
+				<h3>Photos</h3>
+				<p></p>
+			</div>
+		</div>
+
+		<div class="container science-olympiad">
+			<div class="rules">
+				<h3>Rules</h3>
+				<p></p>
+				<h3>Elastic Launched Glider</h3>
+				<p></p>
+				<h3>Wright Stuff</h3>
+				<p></p>
+			</div>
+		</div>
+
+		<div class="container utilities">
 			<div class="torque-calculator">
 				<h3>Torque Calculator</h3>
 				<p>Enter values for three of the four fields and select appropriate units.</p>

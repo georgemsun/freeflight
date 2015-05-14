@@ -71,7 +71,7 @@ body {
 }
 
 .tagline {
-	font-size: 100px;
+	font-size: 90px;
 	text-align: center;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -86,6 +86,10 @@ body {
 .container {
 	padding-left: 80px;
 	padding-right: 80px;
+}
+
+.indoor-duration, .science-olympiad, .utilities {
+	visibility: hidden;
 }
 
 h3 {
