@@ -11,34 +11,31 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var resetNav = function() {
-					$('.home, .indoor-duration, .science-olympiad, .utilities').css('visibility', 'hidden');
+					$('.home, .indoor-duration, .science-olympiad, .utilities').css('display', 'none');
 					// $('.nav li a:link, .nav li a:visited').css('color', 'grey');
 				}
-
+				resetNav();
 				$('.nav-home').click(function() {
 					resetNav();
-					$('.home').css('visibility', 'visible');
+					$('.home').css('display', 'block');
 					$('.nav-home').css('color', 'black');
 					$('title').html("Free Flight");
 				});
-
 				$('.nav-indoor-duration').click(function() {
 					resetNav();
-					$('.indoor-duration').css('visibility', 'visible');
+					$('.indoor-duration').css('display', 'block');
 					$('.nav-indoor-duration').css('color', 'black');
 					$('title').html("Indoor Duration | Free Flight");
 				});
-
 				$('.nav-science-olympiad').click(function() {
 					resetNav();
-					$('.science-olympiad').css('visibility', 'visible');
+					$('.science-olympiad').css('display', 'block');
 					$('.nav-science-olympiad').css('color', 'black');
 					$('title').html("Science Olympiad | Free Flight");
 				});
-
 				$('.nav-utilities, .nav-utilities-torque, .nav-utilities-balsa-density').click(function() {
 					resetNav();
-					$('.utilities').css('visibility', 'visible');
+					$('.utilities').css('display', 'block');
 					$('.nav-utilities').css('color', 'black');
 					$('title').html("Utilities | Free Flight");
 				});

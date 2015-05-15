@@ -88,9 +88,9 @@ body {
 	padding-right: 80px;
 }
 
-.indoor-duration, .science-olympiad, .utilities {
-	visibility: hidden;
-}
+/*.indoor-duration, .science-olympiad, .utilities {
+	display: none;
+}*/
 
 h3 {
 	font-size: 32px;
