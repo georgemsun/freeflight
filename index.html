@@ -46,6 +46,15 @@
 				$('.nav > li').bind('mouseout', function() {
 					$(this).find('ul').css('visibility', 'hidden');
 				});
+				//NOT WORKING
+				$('#torque-units').change(function() {
+					if($('#torque-units').val() = "in-oz.")
+						$('.torque-calculator #output').html("HEHE");
+						// torque *= 72.0077887;
+					// if() length *= 2;
+					// if() diameter *= 2;
+					// if() angle *= 2;
+				});
 				$('.torque-calculator form').keyup(function() {
 					var torque = $('.torque-calculator #torque').val();
 					var length = $('.torque-calculator #length').val();
@@ -53,11 +62,6 @@
 					var angle = $('.torque-calculator #angle').val();
 					var g = 12000000;
 						// if(diameter < 0.025)
-
-					// if($('#torque-units option:selected').text() = "gram-cm.") torque *= 72.0077887;
-					// if() length *= 2;
-					// if() diameter *= 2;
-					// if() angle *= 2;
 
 					//a = C*T*L/G*D^4
 					if(torque === "" && length != "" && diameter != "" && angle != "") {
@@ -86,7 +90,12 @@
 					var mass = $('.balsa-density-calculator #mass').val();
 
 					if(thickness > 0 && width > 0 && length > 0 && mass > 0) {
-						$('.balsa-density-calculator #output').html("Density: " + 3.80958789*mass/(thickness * width * length) + " pounds per cubic foot");
+						var density = 3.80958789*mass/(thickness * width * length);
+						if(density < 6)	$('.balsa-density-calculator #output').html("Extra Light Balsa (" + density + " pounds per cubic foot)");
+						else if(density < 10)	$('.balsa-density-calculator #output').html("Light Balsa (" + density + " pounds per cubic foot)");
+						else if(density < 14)	$('.balsa-density-calculator #output').html("Medium Balsa (" + density + " pounds per cubic foot)");
+						else if(density < 19)	$('.balsa-density-calculator #output').html("Heavy Balsa (" + density + " pounds per cubic foot)");
+						else $('.balsa-density-calculator #output').html("Extra Heavy Balsa (" + density + " pounds per cubic foot)");
 					}
 					else {
 						$('.balsa-density-calculator #output').html("");
@@ -200,7 +209,7 @@
 
 			<div class="balsa-density-calculator">
 				<h3>Balsa Density Calculator</h3>
-				<p>Enter values for all three fields and select appropriate units.</p>
+				<p>Enter values for four of the three fields in decimal form and select appropriate units.</p>
 				<form>
 					<label>Thickness</label>
 					<input type="number" placeholder="Thickness" step="0.015625" id="thickness"></input>
@@ -228,6 +237,16 @@
 					<select id="mass-units">
 						<option>grams</option>
 						<option>pounds</option>
+					</select>
+					</br>
+					<label>Density</label>
+					<select id="density">
+						<option></option>
+						<option>Extra Light (-6 lbs/cubic ft)</option>
+						<option>Light (6-10 lbs/cubic ft)</option>
+						<option>Medium (10-14 lbs/cubic ft)</option>
+						<option>Heavy (14-19 lbs/cubic ft)</option>
+						<option>Extra Heavy (19+ lbs/cubic ft)</option>
 					</select>
 					</br>
 				</form>
