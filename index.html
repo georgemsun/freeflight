@@ -13,7 +13,7 @@
 				var resetNav = function() {
 					$('.home, .indoor-duration, .olympiad, .utilities').css('display', 'none');
 					$('.nav > li > a:link, .nav > li > la:visited').css('color', 'grey');
-				}
+				};
 				resetNav();
 				$('.home').css('display', 'block');
 				$('.nav-home').css('color', 'black');
@@ -143,6 +143,107 @@
 		<div class="container home">
 			<h3>Welcome!</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<div class="dial-generator">
+				<h3>Dial Generator</h3>
+				<p>Enter integer values for major ticks, minor ticks, and subminor ticks. Minor ticks sets the number of ticks between each major tick, and subminor ticks sets the number of grey between each minor tick.</p>
+				<form>
+					<label>Major Ticks</label>
+					<input type="number" placeholder="Number" step="1" id="major"></input>
+					</br>
+					<label>Minor Ticks</label>
+					<input type="number" placeholder="Number" step="1" id="minor"></input>
+					</br>
+					<label>Subminor Ticks</label>
+					<input type="number" placeholder="Number" step="1" id="minor-sub"></input>
+					</br>
+					<label>Major Increments</label>
+					<input type="number" placeholder="Number" step="0.05" id="major-increments"></input>
+				</form>
+				<canvas id="dial-generator-canvas" "height: 250px" "width: 500px"></canvas>
+				<style>
+					canvas {
+						border: 1px solid gray;
+					}
+				</style>
+				<script type="text/javascript">
+					var circle_radius = 300;
+					var circle_radius_minor = circle_radius - 30;
+					var circle_radius_major = circle_radius - 50;
+					var circle_radius_text = circle_radius - 80;
+					var circle_x = circle_radius;
+					var circle_y = circle_radius;
+					var major = 1;
+					var minor = 1;
+					var minor_sub = 1;
+					var major_increments = 1;
+
+					var drawDial = function() {
+						var canvas = document.getElementById("dial-generator-canvas");
+						canvas.width = document.body.clientWidth;
+	    				canvas.height = document.body.clientHeight;
+						var context = canvas.getContext("2d");
+
+						//SUBMINOR
+						context.beginPath();
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major/minor/minor_sub)) {
+							context.moveTo(circle_radius_minor*Math.cos(i) + circle_x, circle_radius_minor*Math.sin(i) + circle_y);
+							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
+						}
+						context.strokeStyle = 'grey';
+						context.stroke();
+						context.closePath();
+
+						//MINOR
+						context.beginPath();
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major/minor)) {
+							context.moveTo(circle_radius_minor*Math.cos(i) + circle_x, circle_radius_minor*Math.sin(i) + circle_y);
+							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
+						}
+						context.strokeStyle = 'red';
+						context.stroke();
+						context.closePath();
+
+						//MAJOR
+						context.beginPath();
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major)) {
+							context.moveTo(circle_radius_major*Math.cos(i) + circle_x, circle_radius_major*Math.sin(i) + circle_y);
+							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
+						}
+						context.strokeStyle = 'black';
+						context.stroke();
+						context.closePath();
+
+						//CIRCLE
+						context.beginPath();
+						context.arc(circle_x,circle_y,circle_radius,0,2*Math.PI);
+						context.strokeStyle = 'black';
+						context.stroke();
+						context.closePath();
+
+						//LABELS
+						var j = 0;
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major)) {
+							context.font = "20px Arial";
+							context.fillText(j,circle_radius_text*Math.cos(i) + circle_x, circle_radius_text*Math.sin(i) + circle_y);
+							j+=major_increments;
+						}
+					};
+					$(document).ready(function() {
+						$('.dial-generator form').keyup(function() {
+							if($('#major').val() > 0) major = $('#major').val();
+							else major = 1;
+							if($('#minor').val() > 0) minor = $('#minor').val();
+							else minor = 1;
+							if($('#minor-sub').val() > 0) minor_sub = $('#minor-sub').val();
+							else minor_sub = 1;
+							if($('#major-increments').val() > 0) major_increments = $('#major-increments').val();
+							else major_increments = 1;
+							drawDial();
+						});
+					});
+				</script>
+			</div>
 		</div>
 
 		<div class="container indoor-duration">
@@ -255,26 +356,6 @@
 					</br>
 				</form>
 				<p id="output"></p>
-			</div>
-
-			<div class="dial-generator">
-				<h3>Dial Generator</h3>
-				<p>Enter values for four of the three fields in decimal form and select appropriate units.</p>
-				<canvas id="dial-generator-canvas"></canvas>
-				<style>
-					canvas {
-						height: 500px;
-						width: 500px;
-					}
-				</style>
-				<script type="text/javascript">
-					var c = document.getElementById("dial-generator-canvas");
-					var ctx = c.getContext("2d");
-					ctx.beginPath();
-					ctx.arc(95,50,40,0,2*Math.PI);
-					ctx.stroke();
-				</script>
-				
 			</div>
 		</div>
 		<div class="footer"></div>
