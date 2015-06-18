@@ -4,7 +4,8 @@ body {
 }
 
 .jumbotron {
-	background: url('http://www.lancefarrow.ca/wp-content/uploads/2014/06/triangle-background-17-1030x494.png');
+	background: url('http://www.flyindoorsweden.se/wp-content/uploads/2010/06/20110522_DHP3356_670.jpg');
+	opacity: 0.3;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
@@ -30,17 +31,18 @@ body {
 .nav li {
 	list-style: none;
 	float: left;
+	margin-right: 10px;
 }
 
 .nav li a:link, .nav li a:visited {
 	display: block;
 	text-decoration: none;
 	padding: 10px;
-	color: grey;
+	color: gray;
 }
 
 .nav li a:hover {
-	background-color: rgba(0, 0, 0, 0.8);
+	/*background-color: rgba(0, 0, 0, 0.8);*/
 	color: white;
 }
 
@@ -54,24 +56,27 @@ body {
 }
 
 .nav li ul li {
-	display:inline;
-	float:none;
+	display: inline;
+	float: none;
 }
 
 .nav li ul li a:link, .nav li ul li a:visited {
-	width:auto;
+	width: auto;
 	background-color: rgba(255, 255, 255, 0.9);
 	color: black;
+	font-size: 18px;
+	padding-right: 50px;
+	min-width: 250px;
 }
 
 .nav li ul li a:hover {
-	width:auto;
+	width: auto;
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 }
 
 .tagline {
-	font-size: 90px;
+	font-size: 70px;
 	text-align: center;
 	font-weight: bold;
 	text-transform: uppercase;

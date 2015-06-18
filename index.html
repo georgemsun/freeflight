@@ -11,8 +11,8 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var resetNav = function() {
-					$('.home, .indoor-duration, .science-olympiad, .utilities').css('display', 'none');
-					// $('.nav li a:link, .nav li a:visited').css('color', 'grey');
+					$('.home, .indoor-duration, .olympiad, .utilities').css('display', 'none');
+					$('.nav > li > a:link, .nav > li > la:visited').css('color', 'grey');
 				}
 				resetNav();
 				$('.nav-home').click(function() {
@@ -21,19 +21,19 @@
 					$('.nav-home').css('color', 'black');
 					$('title').html("Free Flight");
 				});
-				$('.nav-indoor-duration').click(function() {
+				$('.nav-indoor-duration, .nav-indoor-articles, .nav-indoor-photos').click(function() {
 					resetNav();
 					$('.indoor-duration').css('display', 'block');
 					$('.nav-indoor-duration').css('color', 'black');
 					$('title').html("Indoor Duration | Free Flight");
 				});
-				$('.nav-science-olympiad').click(function() {
+				$('.nav-olympiad, .nav-olympiad-wright-stuff, .nav-olympiad-elastic-launched-glider').click(function() {
 					resetNav();
-					$('.science-olympiad').css('display', 'block');
-					$('.nav-science-olympiad').css('color', 'black');
+					$('.olympiad').css('display', 'block');
+					$('.nav-olympiad').css('color', 'black');
 					$('title').html("Science Olympiad | Free Flight");
 				});
-				$('.nav-utilities, .nav-utilities-torque, .nav-utilities-balsa-density').click(function() {
+				$('.nav-utilities, .nav-utilities-torque, .nav-utilities-balsa-density, .nav-utilities-dial').click(function() {
 					resetNav();
 					$('.utilities').css('display', 'block');
 					$('.nav-utilities').css('color', 'black');
@@ -46,6 +46,7 @@
 				$('.nav > li').bind('mouseout', function() {
 					$(this).find('ul').css('visibility', 'hidden');
 				});
+
 				//NOT WORKING
 				$('#torque-units').change(function() {
 					if($('#torque-units').val() = "in-oz.")
@@ -107,9 +108,8 @@
 	<body>
 		<div class="jumbotron"></div>
 
-		
 		<div class="tagline">
-			<div class="container">Free Flight</div>
+			<!-- <div class="container">Free Flight</div> -->
 		</div>
 
 		<div class="container">
@@ -117,22 +117,21 @@
 				<li><a id="nav-head" href="#" class="nav-home">Home</a></li>
 				<li><a id="nav-head" href="#" class="nav-indoor-duration">Indoor Duration</a>
 					<ul>
-						<li><a href="#">Articles: Concepts</a></li>
-						<li><a href="#">Guides: How To</a></li>
-						<li><a href="#">Photos</a></li>
+						<li><a href="#"  class="nav-indoor-articles">Articles and Guides</a></li>
+						<li><a href="#"  class="nav-indoor-photos">Photos</a></li>
 					</ul>
 				</li>
-				<li><a id="nav-head" href="#" class="nav-science-olympiad">Science Olympiad</a>
+				<li><a id="nav-head" href="#" class="nav-olympiad">Science Olympiad</a>
 					<ul>
-						<li><a href="#">Rules</a></li>
-						<li><a href="#">Elastic Launched Glider</a></li>
-						<li><a href="#">Wright Stuff</a></li>
+						<li><a href="#" class="nav-olympiad-elastic-launched-glider">Elastic Launched Glider</a></li>
+						<li><a href="#" class="nav-olympiad-wright-stuff">Wright Stuff</a></li>
 					</ul>
 				</li>
 				<li><a id="nav-head" href="#" class="nav-utilities">Utilities</a>
 					<ul>
 						<li><a href="#" class="nav-utilities-torque">Torque Calculator</a></li>
 						<li><a href="#" class="nav-utilities-balsa-density">Balsa Density Calculator</a></li>
+						<li><a href="#" class="nav-utilities-dial">Dial Generator</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -143,21 +142,21 @@
 
 		<div class="container indoor-duration">
 			<div class="articles">
-				<h3>Articles</h3>
+				<h3>Articles and Guides</h3>
 				<p></p>
-				<h3>Guides</h3>
-				<p></p>
+			</div>
+			<div class="photos">
 				<h3>Photos</h3>
 				<p></p>
 			</div>
 		</div>
 
-		<div class="container science-olympiad">
-			<div class="rules">
-				<h3>Rules</h3>
-				<p></p>
+		<div class="container olympiad">
+			<div class="elastic-launched-glider">
 				<h3>Elastic Launched Glider</h3>
 				<p></p>
+			</div>
+			<div class="wright-stuff">
 				<h3>Wright Stuff</h3>
 				<p></p>
 			</div>
@@ -251,6 +250,26 @@
 					</br>
 				</form>
 				<p id="output"></p>
+			</div>
+
+			<div class="dial-generator">
+				<h3>Dial Generator</h3>
+				<p>Enter values for four of the three fields in decimal form and select appropriate units.</p>
+				<canvas id="dial-generator-canvas"></canvas>
+				<style>
+					canvas {
+						height: 500px;
+						width: 500px;
+					}
+				</style>
+				<script type="text/javascript">
+					var c = document.getElementById("dial-generator-canvas");
+					var ctx = c.getContext("2d");
+					ctx.beginPath();
+					ctx.arc(95,50,40,0,2*Math.PI);
+					ctx.stroke();
+				</script>
+				
 			</div>
 		</div>
 		<div class="footer"></div>
