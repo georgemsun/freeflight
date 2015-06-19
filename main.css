@@ -1,11 +1,12 @@
 body {
 	margin: 0px;
+	margin-bottom: 80px;
 	padding: 0px;
 	font-family: 'Open Sans', sans-serif;
 }
 
 .jumbotron {
-	background: url('http://www.flyindoorsweden.se/wp-content/uploads/2010/06/20110522_DHP3356_670.jpg');
+	background: url('https://c2.staticflickr.com/8/7429/14010063716_031a1f6d15_k.jpg');
 	opacity: 0.3;
 	width: 100%;
 	height: 100%;
@@ -21,7 +22,7 @@ body {
 .nav {
 	margin: 0px;
 	padding: 0px;
-	height: 50px;
+	overflow: auto;
 	font-size: 18px;
 }
 
@@ -51,7 +52,7 @@ body {
 .nav li ul {
 	position: absolute;
 	visibility: hidden;
-	border-top: 1px solid #fff;
+	/*border-top: 1px solid #fff;*/
 	margin: 0;
 	padding: 0;
 	z-index: 1;
@@ -97,36 +98,43 @@ body {
 
 h3 {
 	font-size: 30px;
+	/*margin-top: 30px;*/
+	margin-bottom: 10px;
 }
 
 label {
 	font-weight: bold;
 }
 
-input, select {
+input, button, select {
 	font-size: 15px;
 	padding: 8px;
 	border-radius: 3px;
-	border: 1px solid rgba(0,0,0,0.4);
+	border: 1px solid rgba(0,0,0,0.3);
 	-webkit-appearance: none;
 }
 
-select:hover {
+button:hover, select:hover {
 	cursor: pointer;
+}
+
+input:hover, button:hover, select:hover {
+	border: 1px solid rgba(0,0,0,0.5);
 }
 
 input:focus, select:focus {
 	outline: none;
-	border: 1px solid rgba(0,0,0,0.6);
+	border: 1px solid rgba(0,0,0,0.7);
 }
 
-label, input, select {
+button:focus {
+	outline: none;
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+label, input, button, select {
 	margin-top: 5px;
 }
 input, #density {
 	margin-left: 7px;
-}
-
-.footer {
-	height: 40px;
 }
