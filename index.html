@@ -8,6 +8,25 @@
 		<!--main.css--><link rel="stylesheet" href="main.css">
 		<!--google fonts--><link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
 
+		<!--FAVICON-->
+		<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+		<link rel="manifest" href="icons/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var resetNav = function() {
@@ -48,80 +67,22 @@
 				});
 				$('.nav > li').bind('mouseout', function() {
 					$(this).find('ul').css('visibility', 'hidden');
-				});
-
-				//NOT WORKING
-				$('#torque-units').change(function() {
-					if($('#torque-units').val() = "in-oz.")
-						$('.torque-calculator #output').html("HEHE");
-						// torque *= 72.0077887;
-					// if() length *= 2;
-					// if() diameter *= 2;
-					// if() angle *= 2;
-				});
-				$('.torque-calculator form').keyup(function() {
-					var torque = $('.torque-calculator #torque').val();
-					var length = $('.torque-calculator #length').val();
-					var diameter = $('.torque-calculator #diameter').val();
-					var angle = $('.torque-calculator #angle').val();
-					var g = 12000000;
-						// if(diameter < 0.025)
-
-					//a = C*T*L/G*D^4
-					if(torque === "" && length != "" && diameter != "" && angle != "") {
-						$('.torque-calculator #output').html("Torque: " + (angle * g * Math.pow(diameter, 4))/(36.5 * length));
-					}
-					else if(torque != "" && length === "" && diameter != "" && angle != "") {
-						$('.torque-calculator #output').html("Length: " + (angle * g * Math.pow(diameter, 4))/(36.5 * torque));
-					}
-					else if(torque != "" && length != "" && diameter === "" && angle != "") {
-						$('.torque-calculator #output').html("Diameter: " + Math.pow((36.5 * torque * length)/(angle * g), 0.25));
-					}
-					else if(torque != "" && length != "" && diameter != "" && angle === "") {
-						$('.torque-calculator #output').html("Angle: " + (36.5 * torque * length)/(g * Math.pow(diameter, 4)));
-					}
-					else if(torque != "" && length != "" && diameter != "" && angle != "") {
-						$('.torque-calculator #output').html("Error: Please leave one field blank.");
-					}
-					else {
-						$('.torque-calculator #output').html("");
-					}
-				});
-				$('.balsa-density-calculator form').keyup(function() {
-					var thickness = $('.balsa-density-calculator #thickness').val();
-					var width = $('.balsa-density-calculator #width').val();
-					var length = $('.balsa-density-calculator #length').val();
-					var mass = $('.balsa-density-calculator #mass').val();
-
-					if(thickness > 0 && width > 0 && length > 0 && mass > 0) {
-						var density = 3.80958789*mass/(thickness * width * length);
-						if(density < 6)	$('.balsa-density-calculator #output').html("Extra Light Balsa (" + density + " pounds per cubic foot)");
-						else if(density < 10)	$('.balsa-density-calculator #output').html("Light Balsa (" + density + " pounds per cubic foot)");
-						else if(density < 14)	$('.balsa-density-calculator #output').html("Medium Balsa (" + density + " pounds per cubic foot)");
-						else if(density < 19)	$('.balsa-density-calculator #output').html("Heavy Balsa (" + density + " pounds per cubic foot)");
-						else $('.balsa-density-calculator #output').html("Extra Heavy Balsa (" + density + " pounds per cubic foot)");
-					}
-					else {
-						$('.balsa-density-calculator #output').html("");
-					}
-				});
+				});				
 			});
 		</script>
 	</head>
 	<body>
 		<div class="jumbotron"></div>
 
-		<div class="tagline">
-			<!-- <div class="container">Free Flight</div> -->
-		</div>
+		<!-- <div class="tagline"><div class="container">Free Flight</div></div> -->
 
-		<div class="container">
+		<div class="container" style="background-color: rgba(0,0,0,0.2)">
 			<ul class="nav">
 				<li><a id="nav-head" href="#" class="nav-home">Home</a></li>
 				<li><a id="nav-head" href="#" class="nav-indoor-duration">Indoor Duration</a>
 					<ul>
-						<li><a href="#"  class="nav-indoor-articles">Articles and Guides</a></li>
-						<li><a href="#"  class="nav-indoor-photos">Photos</a></li>
+						<li><a href="#" class="nav-indoor-articles">Articles and Guides</a></li>
+						<li><a href="#" class="nav-indoor-photos">Photos</a></li>
 					</ul>
 				</li>
 				<li><a id="nav-head" href="#" class="nav-olympiad">Science Olympiad</a>
@@ -143,106 +104,6 @@
 		<div class="container home">
 			<h3>Welcome!</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<div class="dial-generator">
-				<h3>Dial Generator</h3>
-				<p>Enter integer values for major ticks, minor ticks, and subminor ticks. Minor ticks sets the number of ticks between each major tick, and subminor ticks sets the number of grey between each minor tick.</p>
-				<form>
-					<label>Major Ticks</label>
-					<input type="number" placeholder="Number" step="1" id="major"></input>
-					</br>
-					<label>Minor Ticks</label>
-					<input type="number" placeholder="Number" step="1" id="minor"></input>
-					</br>
-					<label>Subminor Ticks</label>
-					<input type="number" placeholder="Number" step="1" id="minor-sub"></input>
-					</br>
-					<label>Major Increments</label>
-					<input type="number" placeholder="Number" step="0.05" id="major-increments"></input>
-				</form>
-				<canvas id="dial-generator-canvas" "height: 250px" "width: 500px"></canvas>
-				<style>
-					canvas {
-						border: 1px solid gray;
-					}
-				</style>
-				<script type="text/javascript">
-					var circle_radius = 300;
-					var circle_radius_minor = circle_radius - 30;
-					var circle_radius_major = circle_radius - 50;
-					var circle_radius_text = circle_radius - 80;
-					var circle_x = circle_radius;
-					var circle_y = circle_radius;
-					var major = 1;
-					var minor = 1;
-					var minor_sub = 1;
-					var major_increments = 1;
-
-					var drawDial = function() {
-						var canvas = document.getElementById("dial-generator-canvas");
-						canvas.width = document.body.clientWidth;
-	    				canvas.height = document.body.clientHeight;
-						var context = canvas.getContext("2d");
-
-						//SUBMINOR
-						context.beginPath();
-						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major/minor/minor_sub)) {
-							context.moveTo(circle_radius_minor*Math.cos(i) + circle_x, circle_radius_minor*Math.sin(i) + circle_y);
-							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
-						}
-						context.strokeStyle = 'grey';
-						context.stroke();
-						context.closePath();
-
-						//MINOR
-						context.beginPath();
-						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major/minor)) {
-							context.moveTo(circle_radius_minor*Math.cos(i) + circle_x, circle_radius_minor*Math.sin(i) + circle_y);
-							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
-						}
-						context.strokeStyle = 'red';
-						context.stroke();
-						context.closePath();
-
-						//MAJOR
-						context.beginPath();
-						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major)) {
-							context.moveTo(circle_radius_major*Math.cos(i) + circle_x, circle_radius_major*Math.sin(i) + circle_y);
-							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
-						}
-						context.strokeStyle = 'black';
-						context.stroke();
-						context.closePath();
-
-						//CIRCLE
-						context.beginPath();
-						context.arc(circle_x,circle_y,circle_radius,0,2*Math.PI);
-						context.strokeStyle = 'black';
-						context.stroke();
-						context.closePath();
-
-						//LABELS
-						var j = 0;
-						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major)) {
-							context.font = "20px Arial";
-							context.fillText(j,circle_radius_text*Math.cos(i) + circle_x, circle_radius_text*Math.sin(i) + circle_y);
-							j+=major_increments;
-						}
-					};
-					$(document).ready(function() {
-						$('.dial-generator form').keyup(function() {
-							if($('#major').val() > 0) major = $('#major').val();
-							else major = 1;
-							if($('#minor').val() > 0) minor = $('#minor').val();
-							else minor = 1;
-							if($('#minor-sub').val() > 0) minor_sub = $('#minor-sub').val();
-							else minor_sub = 1;
-							if($('#major-increments').val() > 0) major_increments = $('#major-increments').val();
-							else major_increments = 1;
-							drawDial();
-						});
-					});
-				</script>
 			</div>
 		</div>
 
@@ -261,9 +122,12 @@
 			<div class="elastic-launched-glider">
 				<h3>Elastic Launched Glider</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 			<div class="wright-stuff">
 				<h3>Wright Stuff</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</div>
@@ -271,78 +135,139 @@
 		<div class="container utilities">
 			<div class="torque-calculator">
 				<h3>Torque Calculator</h3>
-				<p>Enter values for three of the four fields and select appropriate units.</p>
+				<p>Enter values for three of the following fields and select appropriate units to calculate the missing value.</p>
 				<form>
 					<label>Torque</label>
 					<input type="number" placeholder="Torque" step="0.01" id="torque"></input>
-					<select id="torque-units">
-						<option value="in-oz.">in-oz.</option>
-						<option value="gram-cm.">gram-cm.</option>
-					</select>
+					<button type="button" id="torque-units">in-oz.</button>
+					<script>
+						$('.torque-calculator #torque-units').click(function() {
+							if($(this).html() == "in-oz.") $(this).html("gram-cm.");
+							else $(this).html("in-oz.");
+						});
+					</script>
 					</br>
 					<label>Length</label>
 					<input type="number" placeholder="Length" step="0.01" id="length"></input>
-					<select id="length-units">
-						<option>inches</option>
-						<option>centimeters</option>
-					</select>
+					<button type="button" id="length-units">inches</button>
+					<script>
+						$('.torque-calculator #length-units').click(function() {
+							if($(this).html() == "inches") $(this).html("centimeters");
+							else $(this).html("inches");
+						});
+					</script>
 					</br>
 					<label>Diameter</label>
 					<input type="number" placeholder="Diameter" step="0.001" id="diameter"></input>
-					<select id="diameter-units">
-						<option>inches</option>
-						<option>centimeters</option>
-					</select>
+					<button type="button" id="diameter-units">inches</button>
+					<script>
+						$('.torque-calculator #diameter-units').click(function() {
+							if($(this).html() == "inches") $(this).html("centimeters");
+							else $(this).html("inches");
+						});
+					</script>
 					</br>
 					<label>Angle</label>
 					<input type="number" placeholder="Angle" step="1.00" id="angle"></input>
-					<select id="angle-units">
-						<option>degrees</option>
-						<option>radians</option>
-					</select>
+					<button type="button" id="angle-units">degrees</button>
+					<script>
+						$('.torque-calculator #angle-units').click(function() {
+							if($(this).html() == "degrees") $(this).html("radians");
+							else $(this).html("degrees");
+						});
+					</script>
 					</br>
-					<!--a = C*T*L/G*D^4
-					a = angle of pointer deflection in degrees (degrees)
-					C = constant: 36.5 (584)
-					T = torque in inch-ounces (newton-millimeters)
-					L = length of the music wire torsional element in inches (millimeters)
-					D = diameter of the music wire torsional element in inches (millimeters)
-					G = torsional Modulus of Elasticity for music wire in pounds/square inch-->
 				</form>
 				<p id="output"></p>
+
+				<script type="text/javascript">
+					// a = C*T*L/G*D^4
+					// a = angle of pointer deflection in degrees (degrees)
+					// C = constant: 36.5 (584)
+					// T = torque in inch-ounces (newton-millimeters)
+					// L = length of the music wire torsional element in inches (millimeters)
+					// D = diameter of the music wire torsional element in inches (millimeters)
+					// G = torsional Modulus of Elasticity for music wire in pounds/square inch
+
+					$('.torque-calculator form').bind('keyup mouseup', function() {
+						var torque = $('.torque-calculator #torque').val();
+						var length = $('.torque-calculator #length').val();
+						var diameter = $('.torque-calculator #diameter').val();
+						var angle = $('.torque-calculator #angle').val();
+						var g = 12000000;
+							// if(diameter < 0.025)
+
+						if($('.torque-calculator #torque-units').html() == "gram-cm." && torque != '') torque *= 0.013887386556753966;
+						if($('.torque-calculator #length-units').html() == "centimeters"  && length != '') length *= 0.393701;
+						if($('.torque-calculator #diameter-units').html() == "centimeters"  && diameter != '') diameter *= 0.393701;
+						if($('.torque-calculator #angle-units').html() == "radians"  && angle != '') angle *= 57.2957795;
+
+						//a = C*T*L/G*D^4
+						if(torque === "" && length != "" && diameter != "" && angle != "") {
+							$('.torque-calculator #output').html("Torque: " + (angle * g * Math.pow(diameter, 4))/(36.5 * length) + " in-oz. or " + (angle * g * Math.pow(diameter, 4))/(36.5 * length * 0.013887386556753966) + " gram-cm.");
+						}
+						else if(torque != "" && length === "" && diameter != "" && angle != "") {
+							$('.torque-calculator #output').html("Length: " + (angle * g * Math.pow(diameter, 4))/(36.5 * torque) + " inches or " + (angle * g * Math.pow(diameter, 4))/(36.5 * torque * 0.393701) + " centimeters");
+						}
+						else if(torque != "" && length != "" && diameter === "" && angle != "") {
+							$('.torque-calculator #output').html("Diameter: " + Math.pow((36.5 * torque * length)/(angle * g), 0.25) + " inches or " + Math.pow((36.5 * torque * length)/(angle * g), 0.25) /  0.393701 + " centimeters");
+						}
+						else if(torque != "" && length != "" && diameter != "" && angle === "") {
+							$('.torque-calculator #output').html("Angle: " + (36.5 * torque * length)/(g * Math.pow(diameter, 4)) + " degrees or " + (36.5 * torque * length)/(g * Math.pow(diameter, 4) * 57.2957795) + " radians");
+						}
+						else if(torque != "" && length != "" && diameter != "" && angle != "") {
+							$('.torque-calculator #output').html("Error: Please leave one field blank.");
+						}
+						else {
+							$('.torque-calculator #output').html("");
+						}
+					});
+				</script>
 			</div>
 
 			<div class="balsa-density-calculator">
 				<h3>Balsa Density Calculator</h3>
-				<p>Enter values for four of the three fields in decimal form and select appropriate units.</p>
+				<p>Enter values for <em>Thickness</em>, <em>Width</em>, <em>Length</em>, and <em>Mass</em> to calculate the density in pounds per cubic foot. Enter values for <em>Thickness</em>, <em>Width</em>, and <em>Length</em> and select a <em>Density</em> to calculate the range of masses of that density. Select appropriate units.</p>
 				<form>
 					<label>Thickness</label>
 					<input type="number" placeholder="Thickness" step="0.015625" id="thickness"></input>
-					<select id="thickness-units">
-						<option>inches</option>
-						<option>centimeters</option>
-					</select>
+					<button type="button" id="thickness-units">inches</button>
+					<script>
+						$('.balsa-density-calculator #thickness-units').click(function() {
+							if($(this).html() == "inches") $(this).html("centimeters");
+							else $(this).html("inches");
+						});
+					</script>
 					</br>
 					<label>Width</label>
 					<input type="number" placeholder="Width" step="1.00" id="width"></input>
-					<select id="width-units">
-						<option>inches</option>
-						<option>centimeters</option>
-					</select>
+					<button type="button" id="width-units">inches</button>
+					<script>
+						$('.balsa-density-calculator #width-units').click(function() {
+							if($(this).html() == "inches") $(this).html("centimeters");
+							else $(this).html("inches");
+						});
+					</script>
 					</br>
 					<label>Length</label>
 					<input type="number" placeholder="Length" step="1.00" id="length"></input>
-					<select id="length-units">
-						<option>inches</option>
-						<option>centimeters</option>
-					</select>
+					<button type="button" id="length-units">inches</button>
+					<script>
+						$('.balsa-density-calculator #length-units').click(function() {
+							if($(this).html() == "inches") $(this).html("centimeters");
+							else $(this).html("inches");
+						});
+					</script>
 					</br>
 					<label>Mass</label>
 					<input type="number" placeholder="Mass" step="0.01" id="mass"></input>
-					<select id="mass-units">
-						<option>grams</option>
-						<option>pounds</option>
-					</select>
+					<button type="button" id="mass-units">grams</button>
+					<script>
+						$('.balsa-density-calculator #mass-units').click(function() {
+							if($(this).html() == "grams") $(this).html("pounds");
+							else $(this).html("grams");
+						});
+					</script>
 					</br>
 					<label>Density</label>
 					<select id="density">
@@ -356,9 +281,167 @@
 					</br>
 				</form>
 				<p id="output"></p>
+
+				<script type="text/javascript">
+					$('.balsa-density-calculator form').bind('keyup mouseup', function() {
+						var thickness = $('.balsa-density-calculator #thickness').val();
+						var width = $('.balsa-density-calculator #width').val();
+						var length = $('.balsa-density-calculator #length').val();
+						var mass = $('.balsa-density-calculator #mass').val();
+
+						if($('.balsa-density-calculator #thickness-units').html() == "centimeters") thickness *= 0.393701;
+						if($('.balsa-density-calculator #width-units').html() == "centimeters") width *= 0.393701;
+						if($('.balsa-density-calculator #length-units').html() == "centimeters") length *= 0.393701;
+						if($('.balsa-density-calculator #mass-units').html() == "grams") mass *= 0.00220462;
+
+						if(thickness > 0 && width > 0 && length > 0 && mass > 0) {
+							var density = mass/(thickness * width * length / 1728);
+							if(density < 6)	$('.balsa-density-calculator #output').html("Extra Light Balsa (" + density + " pounds per cubic foot)");
+							else if(density < 10)	$('.balsa-density-calculator #output').html("Light Balsa (" + density + " pounds per cubic foot)");
+							else if(density < 14)	$('.balsa-density-calculator #output').html("Medium Balsa (" + density + " pounds per cubic foot)");
+							else if(density < 19)	$('.balsa-density-calculator #output').html("Heavy Balsa (" + density + " pounds per cubic foot)");
+							else $('.balsa-density-calculator #output').html("Extra Heavy Balsa (" + density + " pounds per cubic foot)");
+						}
+						else {
+							$('.balsa-density-calculator #output').html("");
+						}
+					});
+				</script>
+			</div>
+
+			<div class="dial-generator">
+				<h3>Dial Generator</h3>
+				<p>Enter integer values for <em>Major Ticks</em>, <em>Minor Ticks</em>, and <em>Subminor Ticks</em>. <em>Minor Ticks</em> sets the number of ticks (red) between each major tick (thick black), and <em>Subminor Ticks</em> sets the number of ticks (grey) between each minor tick (red). When finished, right click on the image below and save it to your computer.</p>
+				<form style="float:left">
+					<label>Major Ticks</label>
+					<input type="number" placeholder="Number" step="1" id="major"></input>
+					</br>
+					<label>Minor Ticks</label>
+					<input type="number" placeholder="Number" step="1" id="minor"></input>
+					</br>
+					<label>Subminor Ticks</label>
+					<input type="number" placeholder="Number" step="1" id="minor-sub"></input>
+					</br>
+					<label>Major Increments</label>
+					<input type="number" placeholder="Number" step="0.05" id="major-increments"></input>
+				</form>
+				<form style="float:left; margin-left: 70px">
+					<label>Circle Radius</label>
+					<input type="number" placeholder="Number" step="1" id="radius"></input>
+					</br>
+					<label>Major Tick Length</label>
+					<input type="number" placeholder="Number" step="1" id="tick-length-major"></input>
+					</br>
+					<label>Minor Tick Length</label>
+					<input type="number" placeholder="Number" step="1" id="tick-length-minor"></input>
+					</br>
+					<label>Text Offset</label>
+					<input type="number" placeholder="Number" step="1" id="text-position"></input>
+				</form>
+				<canvas id="dial-generator-canvas" "height: 0px" "width: 0px"></canvas>
+				<style>
+					canvas {
+						/*border: 1px solid gray;*/
+					}
+				</style>
+
+				<script type="text/javascript">
+					var circle_radius = 400;
+					var tick_length_minor = 30;
+					var tick_length_major = 50;
+					var text_position = 80;
+					var major = 1;
+					var minor = 1;
+					var minor_sub = 1;
+					var major_increments = 0.1;
+					var circle_radius_minor = circle_radius - tick_length_minor;
+					var circle_radius_major = circle_radius - tick_length_major;
+					var circle_radius_text = circle_radius - text_position;
+					
+
+					var drawDial = function() {
+						var canvas = document.getElementById("dial-generator-canvas");
+						canvas.width = document.body.clientWidth * 0.75;
+	 					canvas.height = document.body.clientWidth * 0.75;
+						var context = canvas.getContext("2d");
+
+						var circle_x = canvas.width/2;
+						var circle_y = canvas.height/2;
+
+						//SUBMINOR
+						context.beginPath();
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major/minor/minor_sub)) {
+							context.moveTo(circle_radius_minor*Math.cos(i) + circle_x, circle_radius_minor*Math.sin(i) + circle_y);
+							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
+						}
+						context.strokeStyle = 'grey';
+						context.stroke(); context.closePath();
+
+						//MINOR
+						context.beginPath();
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major/minor)) {
+							context.moveTo(circle_radius_minor*Math.cos(i) + circle_x, circle_radius_minor*Math.sin(i) + circle_y);
+							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
+						}
+						context.strokeStyle = 'red';
+						context.stroke(); context.closePath();
+
+						//MAJOR
+						context.beginPath();
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major)) {
+							context.moveTo(circle_radius_major*Math.cos(i) + circle_x, circle_radius_major*Math.sin(i) + circle_y);
+							context.lineTo(circle_radius*Math.cos(i) + circle_x, circle_radius*Math.sin(i) + circle_y);	
+						}
+						context.strokeStyle = 'black';
+						context.lineWidth = 2;
+						context.stroke(); context.closePath();
+
+						//CIRCLE
+						context.beginPath();
+						context.arc(circle_x,circle_y,circle_radius,0,2*Math.PI);
+						context.strokeStyle = 'black';
+						context.lineWidth = 1;
+						context.stroke(); context.closePath();
+
+						//CIRCLE
+						context.beginPath();
+						context.arc(circle_x,circle_y,10,0,2*Math.PI);
+						context.strokeStyle = 'black';
+						context.lineWidth = 1;
+						context.stroke(); context.closePath();
+
+						//LABELS
+						var j = 0;
+						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major)) {
+							context.font = '20px Arial';
+							context.fillText(j,circle_radius_text*Math.cos(i) + circle_x, circle_radius_text*Math.sin(i) + circle_y);
+							j+=major_increments;
+						}
+					};
+					$(document).ready(function() {
+						$('.dial-generator form').bind('keyup mouseup', function() {
+							if($('.dial-generator #major').val() > 0) major = $('.dial-generator #major').val();
+							else major = 1;
+							if($('.dial-generator #minor').val() > 0) minor = $('.dial-generator #minor').val();
+							else minor = 1;
+							if($('.dial-generator #minor-sub').val() > 0) minor_sub = $('.dial-generator #minor-sub').val();
+							else minor_sub = 1;
+							if($('.dial-generator #major-increments').val() > 0) major_increments = $('.dial-generator #major-increments').val();
+							else major_increments = 0.1;
+
+							if($('.dial-generator #radius').val() > 0) circle_radius = $('.dial-generator #radius').val();
+							if($('.dial-generator #tick-length-minor').val() > 0) tick_length_minor = $('.dial-generator #tick-length-minor').val();
+							if($('.dial-generator #tick-length-major').val() > 0) tick_length_major = $('.dial-generator #tick-length-major').val();
+							if($('.dial-generator #text-position').val() > 0) text_position = $('.dial-generator #text-position').val();
+
+							circle_radius_minor = circle_radius - tick_length_minor;
+							circle_radius_major = circle_radius - tick_length_major;
+							circle_radius_text = circle_radius - text_position;
+							drawDial();
+						});
+					});
+				</script>
 			</div>
 		</div>
-		<div class="footer"></div>
 	</body>
-
 </html>
