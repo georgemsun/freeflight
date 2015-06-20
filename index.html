@@ -78,7 +78,7 @@
 
 		<div class="container" style="background-color: rgba(0,0,0,0.2)">
 			<ul class="nav">
-				<li><a id="nav-head" href="#" class="nav-home">Home</a></li>
+				<li><a id="nav-head" href="#" class="nav-home" style="padding-left: 0px">Home</a></li>
 				<li><a id="nav-head" href="#" class="nav-indoor-duration">Indoor Duration</a>
 					<ul>
 						<li><a href="#" class="nav-indoor-articles">Articles and Guides</a></li>
@@ -327,16 +327,16 @@
 				</form>
 				<form style="float:left; margin-left: 70px">
 					<label>Circle Radius</label>
-					<input type="number" placeholder="Number" step="1" id="radius"></input>
+					<input type="number" placeholder="Inches" step="0.25" id="radius"></input>
 					</br>
 					<label>Major Tick Length</label>
-					<input type="number" placeholder="Number" step="1" id="tick-length-major"></input>
+					<input type="number" placeholder="Inches" step="0.25" id="tick-length-major"></input>
 					</br>
 					<label>Minor Tick Length</label>
-					<input type="number" placeholder="Number" step="1" id="tick-length-minor"></input>
+					<input type="number" placeholder="Inches" step="0.25" id="tick-length-minor"></input>
 					</br>
 					<label>Text Offset</label>
-					<input type="number" placeholder="Number" step="1" id="text-position"></input>
+					<input type="number" placeholder="Inches" step="0.25" id="text-position"></input>
 				</form>
 				<canvas id="dial-generator-canvas" "height: 0px" "width: 0px"></canvas>
 				<style>
@@ -429,10 +429,10 @@
 							if($('.dial-generator #major-increments').val() > 0) major_increments = $('.dial-generator #major-increments').val();
 							else major_increments = 0.1;
 
-							if($('.dial-generator #radius').val() > 0) circle_radius = $('.dial-generator #radius').val();
-							if($('.dial-generator #tick-length-minor').val() > 0) tick_length_minor = $('.dial-generator #tick-length-minor').val();
-							if($('.dial-generator #tick-length-major').val() > 0) tick_length_major = $('.dial-generator #tick-length-major').val();
-							if($('.dial-generator #text-position').val() > 0) text_position = $('.dial-generator #text-position').val();
+							if($('.dial-generator #radius').val() > 0) circle_radius = $('.dial-generator #radius').val() * 96;
+							if($('.dial-generator #tick-length-minor').val() > 0) tick_length_minor = $('.dial-generator #tick-length-minor').val() * 96;
+							if($('.dial-generator #tick-length-major').val() > 0) tick_length_major = $('.dial-generator #tick-length-major').val() * 96;
+							if($('.dial-generator #text-position').val() > 0) text_position = $('.dial-generator #text-position').val() * 96;
 
 							circle_radius_minor = circle_radius - tick_length_minor;
 							circle_radius_major = circle_radius - tick_length_major;
