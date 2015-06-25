@@ -6,7 +6,7 @@ body {
 }
 
 .jumbotron {
-	background: url('https://c2.staticflickr.com/8/7429/14010063716_031a1f6d15_k.jpg');
+	background: url(background.jpg);
 	opacity: 0.3;
 	width: 100%;
 	height: 100%;
