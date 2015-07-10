@@ -2,13 +2,12 @@
 	<head>
 		<title>Free Flight</title>
 
-		<!--jquery.min.js--><script type="text/javascript" src="jquery.min.js"></script>
-		<!--shift.css--><link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-		<!--bootstrap.css--><!-- <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css"> -->
-		<!--main.css--><link rel="stylesheet" href="main.css">
-		<!--google fonts--><link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="main.css">
+		<script src="jquery.min.js"></script>
+		<script src="nav.js"></script>
+		<script src="utilities.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
 
-		<!--FAVICON-->
 		<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
@@ -26,50 +25,6 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				var resetNav = function() {
-					$('.home, .indoor-duration, .olympiad, .utilities').css('display', 'none');
-					$('.nav > li > a:link, .nav > li > la:visited').css('color', 'grey');
-				};
-				resetNav();
-				$('.home').css('display', 'block');
-				$('.nav-home').css('color', 'black');
-				$('title').html("Free Flight");
-				$('.nav-home').click(function() {
-					resetNav();
-					$('.home').css('display', 'block');
-					$('.nav-home').css('color', 'black');
-					$('title').html("Free Flight");
-				});
-				$('.nav-indoor-duration, .nav-indoor-articles, .nav-indoor-photos').click(function() {
-					resetNav();
-					$('.indoor-duration').css('display', 'block');
-					$('.nav-indoor-duration').css('color', 'black');
-					$('title').html("Indoor Duration | Free Flight");
-				});
-				$('.nav-olympiad, .nav-olympiad-wright-stuff, .nav-olympiad-elastic-launched-glider').click(function() {
-					resetNav();
-					$('.olympiad').css('display', 'block');
-					$('.nav-olympiad').css('color', 'black');
-					$('title').html("Science Olympiad | Free Flight");
-				});
-				$('.nav-utilities, .nav-utilities-torque, .nav-utilities-balsa-density, .nav-utilities-dial').click(function() {
-					resetNav();
-					$('.utilities').css('display', 'block');
-					$('.nav-utilities').css('color', 'black');
-					$('title').html("Utilities | Free Flight");
-				});
-
-				$('.nav > li').bind('mouseover', function() {
-					$(this).find('ul').css('visibility', 'visible');
-				});
-				$('.nav > li').bind('mouseout', function() {
-					$(this).find('ul').css('visibility', 'hidden');
-				});				
-			});
-		</script>
 	</head>
 	<body>
 		<div class="jumbotron"></div>
