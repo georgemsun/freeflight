@@ -57,6 +57,7 @@ body {
 	padding: 0;
 	z-index: 1;
 	font-size: 15px;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav li ul li {
