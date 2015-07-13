@@ -1,3 +1,14 @@
+<!-- To do:
+- faster response to changes in number inputs
+- made transition between pages smoother with fade
+- use smoothscroll on nav links
+- move javascript to separate filesl
+- write script so last field in density calculator can be used
+- possibly make torque and density calculator outputs round
+- add articles/photos to indoor duration and science olympiad page
+- embed youtube videos in pages
+ -->
+
 <html>
 	<head>
 		<title>Free Flight</title>
@@ -36,21 +47,21 @@
 				<li><a id="nav-head" href="#" class="nav-home" style="padding-left: 0px">Home</a></li>
 				<li><a id="nav-head" href="#" class="nav-indoor-duration">Indoor Duration</a>
 					<ul>
-						<li><a href="#" class="nav-indoor-articles">Articles and Guides</a></li>
-						<li><a href="#" class="nav-indoor-photos">Photos</a></li>
+						<li><a href="#indoor-articles" class="nav-indoor-articles">Articles and Guides</a></li>
+						<li><a href="#indoor-photos" class="nav-indoor-photos">Photos</a></li>
 					</ul>
 				</li>
 				<li><a id="nav-head" href="#" class="nav-olympiad">Science Olympiad</a>
 					<ul>
-						<li><a href="#" class="nav-olympiad-elastic-launched-glider">Elastic Launched Glider</a></li>
-						<li><a href="#" class="nav-olympiad-wright-stuff">Wright Stuff</a></li>
+						<li><a href="#olympiad-elastic-launched-glider" class="nav-olympiad-elastic-launched-glider">Elastic Launched Glider</a></li>
+						<li><a href="#olympiad-wright-stuff" class="nav-olympiad-wright-stuff">Wright Stuff</a></li>
 					</ul>
 				</li>
 				<li><a id="nav-head" href="#" class="nav-utilities">Utilities</a>
 					<ul>
-						<li><a href="#" class="nav-utilities-torque">Torque Calculator</a></li>
-						<li><a href="#" class="nav-utilities-balsa-density">Balsa Density Calculator</a></li>
-						<li><a href="#" class="nav-utilities-dial">Dial Generator</a></li>
+						<li><a href="#utilities-torque-calculator" class="nav-utilities-torque">Torque Calculator</a></li>
+						<li><a href="#utilities-balsa-density-calculator" class="nav-utilities-balsa-density">Balsa Density Calculator</a></li>
+						<li><a href="#utilities-dial-generator" class="nav-utilities-dial">Dial Generator</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -63,23 +74,23 @@
 		</div>
 
 		<div class="container indoor-duration">
-			<div class="articles">
+			<div class="articles" id="indoor-articles">
 				<h3>Articles and Guides</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-			<div class="photos">
+			<div class="photos" id="indoor-photos">
 				<h3>Photos</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</div>
 
 		<div class="container olympiad">
-			<div class="elastic-launched-glider">
+			<div class="elastic-launched-glider" id="olympiad-elastic-launched-glider">
 				<h3>Elastic Launched Glider</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-			<div class="wright-stuff">
+			<div class="wright-stuff" id="olympiad-wright-stuff">
 				<h3>Wright Stuff</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -88,7 +99,7 @@
 		</div>
 
 		<div class="container utilities">
-			<div class="torque-calculator">
+			<div class="torque-calculator" id="utilities-torque-calculator">
 				<h3>Torque Calculator</h3>
 				<p>Enter values for three of the following fields and select appropriate units to calculate the missing value.</p>
 				<form>
@@ -180,7 +191,7 @@
 				</script>
 			</div>
 
-			<div class="balsa-density-calculator">
+			<div class="balsa-density-calculator" id="utilities-balsa-density-calculator">
 				<h3>Balsa Density Calculator</h3>
 				<p>Enter values for <em>Thickness</em>, <em>Width</em>, <em>Length</em>, and <em>Mass</em> to calculate the density in pounds per cubic foot. Enter values for <em>Thickness</em>, <em>Width</em>, and <em>Length</em> and select a <em>Density</em> to calculate the range of masses of that density. Select appropriate units.</p>
 				<form>
@@ -264,7 +275,7 @@
 				</script>
 			</div>
 
-			<div class="dial-generator">
+			<div class="dial-generator" id="utilities-dial-generator">
 				<h3>Dial Generator</h3>
 				<p>Enter integer values for <em>Major Ticks</em>, <em>Minor Ticks</em>, and <em>Subminor Ticks</em>. <em>Minor Ticks</em> sets the number of ticks (red) between each major tick (thick black), and <em>Subminor Ticks</em> sets the number of ticks (grey) between each minor tick (red). When finished, right click on the image below and save it to your computer.</p>
 				<form style="float:left">
@@ -294,11 +305,6 @@
 					<input type="number" placeholder="Inches" step="0.25" id="text-position"></input>
 				</form>
 				<canvas id="dial-generator-canvas" "height: 0px" "width: 0px"></canvas>
-				<style>
-					canvas {
-						/*border: 1px solid gray;*/
-					}
-				</style>
 
 				<script type="text/javascript">
 					var circle_radius = 400;
@@ -369,7 +375,8 @@
 						var j = 0;
 						for(var i = -0.5*Math.PI; i < 1.5*Math.PI; i+=(2*Math.PI/major)) {
 							context.font = '20px Arial';
-							context.fillText(j,circle_radius_text*Math.cos(i) + circle_x, circle_radius_text*Math.sin(i) + circle_y);
+							context.textAlign="center"; 
+							context.fillText(Math.round(j * 100) / 100,circle_radius_text*Math.cos(i) + circle_x, circle_radius_text*Math.sin(i) + circle_y+7);
 							j+=major_increments;
 						}
 					};
@@ -381,8 +388,8 @@
 							else minor = 1;
 							if($('.dial-generator #minor-sub').val() > 0) minor_sub = $('.dial-generator #minor-sub').val();
 							else minor_sub = 1;
-							if($('.dial-generator #major-increments').val() > 0) major_increments = $('.dial-generator #major-increments').val();
-							else major_increments = 0.1;
+							if($('.dial-generator #major-increments').val() > 0) major_increments = parseInt($('.dial-generator #major-increments').val()/0.01, 10)*0.01;
+							else major_increments = 1;
 
 							if($('.dial-generator #radius').val() > 0) circle_radius = $('.dial-generator #radius').val() * 96;
 							if($('.dial-generator #tick-length-minor').val() > 0) tick_length_minor = $('.dial-generator #tick-length-minor').val() * 96;
