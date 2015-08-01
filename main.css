@@ -108,8 +108,8 @@ h3 {
 a:link, a:visited {
 	text-decoration: none;
 	color: rgb(100, 50, 0);
+	transition: color 0.3s;
 }
-
 a:hover {
 	color: black;
 }
@@ -122,31 +122,32 @@ input, button, select {
 	font-size: 15px;
 	padding: 8px;
 	border-radius: 3px;
-	border: 1px solid rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.1);
 	-webkit-appearance: none;
+	transition: border 0.3s;
 }
-
+input {
+	background-color: rgba(255,255,255,0.7);
+}
+button {
+	background-color: rgba(50,50,50,0.2);
+	background-color: rgba(255,255,255,0);
+}
 button:hover, select:hover {
 	cursor: pointer;
 }
-
-input:hover, button:hover, select:hover {
+input:hover, button:hover, select:hover, input:focus, select:focus{
+	outline: none;
 	border: 1px solid rgba(0,0,0,0.5);
 }
-
-input:focus, select:focus {
-	outline: none;
-	border: 1px solid rgba(0,0,0,0.7);
-}
-
 button:focus {
 	outline: none;
-	border: 1px solid rgba(0,0,0,0.5);
+	/*border: 1px solid rgba(0,0,0,0.5);*/
 }
-
 label, input, button, select {
 	margin-top: 5px;
 }
-input, #density {
-	margin-left: 7px;
+
+.home, .indoor-duration, .olympiad, .utilities {
+	display: none;
 }
