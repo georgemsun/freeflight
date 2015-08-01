@@ -1,8 +1,10 @@
 $(document).ready(function() {
 	var fadeOut = 1;
 	var fadeIn = 900;
+	var fadeIn_menu = 200;
+	var currentPage = "home";
 	var resetNav = function() {
-		$('.home, .indoor-duration, .olympiad, .utilities').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'none'); }).fadeTo(fadeOut, 1);
+		$('.home, .general, .utilities').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'none'); }).fadeTo(fadeOut, 1);
 		$('.nav > li > a:link, .nav > li > la:visited').css('color', 'grey');
 	};
 	resetNav();
@@ -10,34 +12,39 @@ $(document).ready(function() {
 		$('.nav-home').css('color', 'black');
 	$('title').html("Free Flight");
 	$('.nav-home').click(function() {
-		resetNav();
-		$('.home').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
-		$('.nav-home').css('color', 'black');
-		$('title').html("Free Flight");
+		if(currentPage != "home") {
+			resetNav();
+			$('.home').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
+			$('.nav-home').css('color', 'black');
+			$('title').html("Free Flight");
+			currentPage = "home";
+		}
 	});
-	$('.nav-indoor-duration, .nav-indoor-articles, .nav-indoor-photos').click(function() {
-		resetNav();
-		$('.indoor-duration').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
-		$('.nav-indoor-duration').css('color', 'black');
-		$('title').html("Indoor Duration | Free Flight");
+	$('.nav-general, .nav-general-articles, .nav-general-materials, .nav-general-photos, .nav-general-elastic-launched-glider, .nav-general-wright-stuff ').click(function() {
+		if(currentPage != "general") {
+			resetNav();
+			$('.general').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
+			$('.nav-general').css('color', 'black');
+			$('title').html("General Resources | Free Flight");
+			currentPage = "general";
+		}
 	});
-	$('.nav-olympiad, .nav-olympiad-wright-stuff, .nav-olympiad-elastic-launched-glider').click(function() {
-		resetNav();
-		$('.olympiad').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
-		$('.nav-olympiad').css('color', 'black');
-		$('title').html("Science Olympiad | Free Flight");
-	});
-	$('.nav-utilities, .nav-utilities-torque, .nav-utilities-balsa-density, .nav-utilities-dial').click(function() {
-		resetNav();
-		$('.utilities').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
-		$('.nav-utilities').css('color', 'black');
-		$('title').html("Utilities | Free Flight");
+	$('.nav-utilities, .nav-utilities-rpm-timer, .nav-utilities-torque, .nav-utilities-balsa-density, .nav-utilities-dial').click(function() {
+		if(currentPage != "utilities") {
+			resetNav();
+			$('.utilities').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
+			$('.nav-utilities').css('color', 'black');
+			$('title').html("Utilities | Free Flight");
+			currentPage = "utilities";
+		}
 	});
 
 	$('.nav > li').bind('mouseover', function() {
 		$(this).find('ul').css('visibility', 'visible');
+		// $(this).fadeTo(fadeOut, 0, function(){ $(this).find('ul').css('visibility', 'visible'); }).fadeTo(fadeIn_menu, 1);
 	});
 	$('.nav > li').bind('mouseout', function() {
 		$(this).find('ul').css('visibility', 'hidden');
+		// $(this).fadeTo(fadeOut, 0, function(){ $(this).find('ul').css('visibility', 'hidden'); }).fadeTo(fadeIn_menu, 1);
 	});				
 });
