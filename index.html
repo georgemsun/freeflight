@@ -1,11 +1,6 @@
 <!-- To do:
-- faster response to changes in number inputs
-- units do not respond immediately
+- units do not respond immediately for torque meter
 - fix tick length and text distance to measure not twice the amount
-- write script so last field in density calculator can be used
-- possibly make torque and density calculator outputs round
-- add articles/photos to indoor duration and science olympiad page
-- embed youtube videos in pages
  -->
 
 <html>
@@ -36,26 +31,26 @@
 	<body>
 		<div class="jumbotron"></div>
 
-		<!-- <div class="tagline"><div class="container">Free Flight</div></div> -->
+		<!-- <div class="tagline">George's Free Flight Resources</div> -->
 
-		<div class="container" style="background-color: rgba(0,0,0,0.2)">
+		<div class="container menu" style="padding-top: 0px; padding-bottom: 0px">
 			<ul class="nav">
 				<li><a id="nav-head" href="#" class="nav-home" style="padding-left: 0px">Home</a></li>
 				<li><a id="nav-head" href="#" class="nav-general">General Resources</a>
 					<ul>
-						<li><a href="#articles" class="nav-general-articles smoothscroll">Articles/Guides</a></li>
+						<li><a href="#articles" class="nav-general-articles smoothscroll">Articles and Guides</a></li>
 						<li><a href="#materials" class="nav-general-materials smoothscroll">Materials</a></li>
-						<li><a href="#photos" class="nav-general-photos smoothscroll">Photos</a></li>
+						<li><a href="#photos" class="nav-general-photos smoothscroll">Photos and Videos</a></li>
 						<li><a href="#elastic-launched-glider" class="nav-general-elastic-launched-glider">Elastic Launched Glider</a></li>
 						<li><a href="#wright-stuff" class="nav-general-wright-stuff smoothscroll">Wright Stuff</a></li>
 					</ul>
 				</li>
 				<li><a id="nav-head" href="#" class="nav-utilities">Utilities</a>
 					<ul>
-						<li><a href="#rpm-timer" class="nav-utilities-rpm-timer smoothscroll">Rotations per Minute Calculator</a></li>
-						<li><a href="#torque-calculator" class="nav-utilities-torque smoothscroll">Torque Calculator</a></li>
+						<li><a href="#rpm-timer" class="nav-utilities-rpm-timer smoothscroll">Rotations Per Minute Calculator</a></li>
 						<li><a href="#balsa-density-calculator" class="nav-utilities-balsa-density smoothscroll">Balsa Density Calculator</a></li>
 						<li><a href="#dial-generator" class="nav-utilities-dial smoothscroll">Dial Generator</a></li>
+						<li><a href="#torque-calculator" class="nav-utilities-torque smoothscroll">Torque Calculator</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -63,41 +58,53 @@
 
 		<div class="container home">
 			<h3>Welcome!</h3>
-			<p>Welcome to my page for flight related articles/guides, photos, and utilities! Navigate  If you run into any issues or have any suggestions, feel free to <a href="mailto:gmsun27@gmail.com">email</a> me!</p>
-			</div>
+			<p>Welcome to my page for flight related articles/guides, photos, and utilities! Navigate this page using the menu at the top. If you run into any issues or have any suggestions, feel free to <a href="mailto:gmsun27@gmail.com">email</a> me!</p>
+			<b><span style="text-decoration: underline">Update</span>: the Balsa Density Calculator is fully working, but the Torque Calculator in 'Utilities' does not work yet.</b>
 		</div>
 
 		<div class="container general">
 			<div id="articles">
 				<h3>Articles and Guides</h3>
-				<a href="http://www.hippocketaeronautics.com/hpa_forum/index.php" target="_blank">Hip Pocket Aeronautics Builder's Forum and Plan Gallery</a>
-				</br><a href="https://nffsblog.wordpress.com/2015/06/14/f1d-plan-construction-information/" target="_blank">"F1D Plan and Construction Information" by Kang</a>
+				<p><a href="http://www.hippocketaeronautics.com/hpa_forum/index.php" target="_blank">Hip Pocket Aeronautics Builder's Forum and Plan Gallery</a>
+				<p><a href="https://nffsblog.wordpress.com/2015/06/14/f1d-plan-construction-information/" target="_blank">"F1D Plan and Construction Information" by Kang</a>
+				<p><a href="http://www.soinc.org/sites/default/files/uploaded_files/pitchgage.pdf" target="_blank">"Build a Simple Pitch Gage" by Ray Harlan</a>
+				<p><a><a href="http://www.parmodels.com/Techniques_and_References/Pitch%20Gage%20Sheet.pdf" target="_blank">Diagrams for a Pitch Gauge</a>
 			</div>
 			<div id="materials">
 				<h3>Materials</h3>
-				<a href="http://www.easybuiltmodels.com/parts.htm" target="_blank">Easy Built Models</a>
-				</br><a href="http://hobbyspecialties.com/" target="_blank">Hobby Specialties</a>
-				</br><a href="http://freedomflightmodels.com/paypal.htm" target="_blank">Freedom Flight Models - kits for Science Olympiad</a>
+				<p><a href="http://www.indoorspecialties.com/" target="_blank">Indoor Specialties by Ray Harlan</a>: rubber stripper, balsa stripper, measurement instruments, tailboom form, winder, top hat bender, boron glue applicator, pigtail thrust bearings, teflon tubing, film, boron fibers, bracing wire, o-rings, balloons, propellers
+				<p><a href="http://propblocks.com/" target="_blank">Propblocks.com by Mike Kirda</a>: Prop Blocks, FliteTork digital torque meters, glider sanding blocks, rib cutters, tailboom sanding jigs
+				<p><a href="http://hobbyspecialties.com/" target="_blank">Hobby Specialties by Alan Cohen</a>: film, balsa, handmade wheels and propellers, dethermalizing timers
+				<p><a href="http://www.easybuiltmodels.com/parts.htm" target="_blank">Easy Built Models by David Niedzielski</a>: kits, tissue paper, wood, glue, knives, mats, engines, books, sanding tools, rubber, propellers and accessories, magnets, wire, wheels, winders, poles
+				<p><a href="http://freedomflightmodels.com/paypal.htm" target="_blank">Freedom Flight Models by Dave Ziegler</a>: kits and parts for Science Olympiad's Elastic Launched Glider, Wright Stuff, and Helicopters
+				<p><a href="http://www.cstsales.com/products.html" target="_blank">CST Sales: The Composites Store</a>: carbon fiber products, aramid fiber/kevlar, adhesives, etc.
+				<style> .general a { font-weight: bold; }
+				a.anchor{display: block; position: relative; top: -250px; visibility: hidden;}</style>
 			</div>
 			<div id="photos">
-				<h3>Photos</h3>
+				<h3>Photos and Videos</h3>
 			</div>
 			<div id="elastic-launched-glider">
 				<h3>Science Olympiad: Elastic Launched Glider</h3>
+				<p><a href="https://www.soinc.org/elastic_launched_glider_b" target="_blank">Official Event Page for Elastic Launched Glider</a>
 			</div>
 			<div id="wright-stuff">
 				<h3>Science Olympiad: Wright Stuff</h3>
-				<a href="http://www.soinc.org/sites/default/files/uploaded_files/pitchgage.pdf" target="_blank">"Build a Simple Pitch Gage" by Ray Harlan</a>
-				</br><a href="http://www.parmodels.com/Techniques_and_References/Pitch%20Gage%20Sheet.pdf" target="_blank">Diagrams for a Pitch Gauge</a>
+				<p><a href="https://www.soinc.org/wright_stuff_c" target="_blank">Official Event Page for Wright Stuff</a>
+				<p><a href="https://www.soinc.org/sites/default/files/uploaded_files/ScienceOlympiad5.0.pdf" target="_blank">Science Olympiad Wright Stuff Event Construction Tips</a>: from Chuck Markos, National Event Supervisor
+				<p><b>Second place at the National Tournament</b>: Mira Loma High School (CA). This plane had the color bonus but no wing bonus, and had a raw time of 4:37.82.
+				<p style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/5ldOesCd9p0?rel=0" frameborder="0" allowfullscreen></iframe>
+				<p><b>Third place at the National Tournament</b>: Fergus High School (MT). This plane had the color bonus and the National wing chord bonus, and had a raw time of 3:57.17.
+				<p style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/7OyDGd-jASc?rel=0" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 
 		<div class="container utilities">
 			<div id="rpm-timer">
-				<h3>Rotations per Minute Timer</h3>
+				<h3>Rotations Per Minute Calculator</h3>
 				<p>Enter a number of rotations to be timed, then use the stopwatch below to time the rotations or enter the time in seconds, but do not type units.</p>
 				<label>Number of Rotations</label>
-				<input type="number" placeholder="Number" value="5" step="1" id="rotations"></input>
+				<input type="number" placeholder="Number" value="5" step="1" min="0" id="rotations"></input>
 				</br>
 				<label>Time</label>
 				<input type="text" placeholder="Seconds" id="timer"></input>
@@ -106,48 +113,24 @@
 				<p id="output"></p>
 			</div>
 
-			<div id="torque-calculator">
-				<h3>Torque Calculator</h3>
-				<p>Enter values for three of the following fields and select appropriate units to calculate the missing value.</p>
-				<form>
-					<label>Torque</label>
-					<input type="number" placeholder="Torque" step="0.01" id="torque"></input>
-					<button type="button" id="torque-units">in-oz.</button>
-					</br>
-					<label>Length</label>
-					<input type="number" placeholder="Length" step="0.01" id="length"></input>
-					<button type="button" id="length-units">inches</button>
-					</br>
-					<label>Diameter</label>
-					<input type="number" placeholder="Diameter" step="0.001" id="diameter"></input>
-					<button type="button" id="diameter-units">inches</button>
-					</br>
-					<label>Angle</label>
-					<input type="number" placeholder="Angle" step="1.00" id="angle"></input>
-					<button type="button" id="angle-units">degrees</button>
-					</br>
-				</form>
-				<p id="output"></p>
-			</div>
-
 			<div id="balsa-density-calculator">
 				<h3>Balsa Density Calculator</h3>
-				<p>Enter values for <em>Thickness</em>, <em>Width</em>, <em>Length</em>, and <em>Mass</em> to calculate the density in pounds per cubic foot. Enter values for <em>Thickness</em>, <em>Width</em>, and <em>Length</em> and select a <em>Density</em> to calculate the range of masses of that density. Select appropriate units.</p>
+				<p>Enter values for <em>Thickness</em>, <em>Width</em>, <em>Length</em>, and <em>Mass</em> to calculate the density in pounds per cubic foot. Or enter values for <em>Thickness</em>, <em>Width</em>, and <em>Length</em> and select a <em>Density</em> to calculate the range of masses with that density. Select appropriate units.</p>
 				<form>
 					<label>Thickness</label>
-					<input type="number" placeholder="Thickness" step="0.015625" id="thickness"></input>
+					<input type="number" placeholder="Thickness" step="0.05" min="0" id="thickness"></input>
 					<button type="button" id="thickness-units">inches</button>
 					</br>
 					<label>Width</label>
-					<input type="number" placeholder="Width" step="1.00" id="width"></input>
+					<input type="number" placeholder="Width" step="0.05" min="0" id="width"></input>
 					<button type="button" id="width-units">inches</button>
 					</br>
 					<label>Length</label>
-					<input type="number" placeholder="Length" step="1.00" id="length"></input>
+					<input type="number" placeholder="Length" step="1.00" min="0" id="length"></input>
 					<button type="button" id="length-units">inches</button>
 					</br>
 					<label>Mass</label>
-					<input type="number" placeholder="Mass" step="0.01" id="mass"></input>
+					<input type="number" placeholder="Mass" step="0.001" min="0" id="mass"></input>
 					<button type="button" id="mass-units">grams</button>
 					</br>
 					<label>Density</label>
@@ -158,7 +141,9 @@
 						<option>Medium (10-14 lbs/cubic ft)</option>
 						<option>Heavy (14-19 lbs/cubic ft)</option>
 						<option>Extra Heavy (19+ lbs/cubic ft)</option>
+						<option>Enter your own value</option>
 					</select>
+					<input type="number" placeholder="lbs/cubic foot" step="0.5" min="0" id="density-enter" style="display: none; width: 140px"></input>
 					</br>
 				</form>
 				<p id="output"></p>
@@ -167,40 +152,65 @@
 			<div id="dial-generator">
 				<h3>Dial Generator</h3>
 				<p>Enter integer values for <em>Major Ticks</em>, <em>Minor Ticks</em>, and <em>Subminor Ticks</em>. <em>Minor Ticks</em> sets the number of ticks (red) between each major tick (thick black), and <em>Subminor Ticks</em> sets the number of ticks (grey) between each minor tick (red). When finished, right click on the image below and save it to your computer.</p>
-				<form style="float:left">
+				<form>
 					<label>Major Ticks</label>
-					<input type="number" placeholder="Number" step="1" id="major"></input>
+					<input type="number" placeholder="Number" step="1" min="0" id="major"></input>
 					</br>
 					<label>Minor Ticks</label>
-					<input type="number" placeholder="Number" step="1" id="minor"></input>
+					<input type="number" placeholder="Number" step="1" min="0" id="minor"></input>
 					</br>
 					<label>Subminor Ticks</label>
-					<input type="number" placeholder="Number" step="1" id="minor-sub"></input>
+					<input type="number" placeholder="Number" step="1" min="0" id="minor-sub"></input>
 					</br>
 					<label>Major Increments</label>
-					<input type="number" placeholder="Number" step="0.05" id="major-increments"></input>
-				</form>
-				<form style="float:left; margin-left: 70px">
+					<input type="number" placeholder="Number" step="0.05" min="0" id="major-increments"></input>
+					</br>
+				<!-- </form> -->
+				<!-- <form style="float: left; margin-left: 70px"> -->
 					<label>Circle Diameter</label>
-					<input type="number" placeholder="Inches" step="0.25" id="radius"></input>
+					<input type="number" placeholder="Inches" step="0.25" min="0" id="radius"></input>
 					</br>
 					<label>Hole Diameter</label>
-					<input type="number" placeholder="Inches" step="0.01" id="hole-diameter"></input>
+					<input type="number" placeholder="Inches" step="0.01" min="0" id="hole-diameter"></input>
 					</br>
 					<label>Major Tick Length</label>
-					<input type="number" placeholder="Inches" step="0.25" id="tick-length-major"></input>
+					<input type="number" placeholder="Inches" step="0.25" min="0" id="tick-length-major"></input>
 					</br>
 					<label>Minor Tick Length</label>
-					<input type="number" placeholder="Inches" step="0.25" id="tick-length-minor"></input>
+					<input type="number" placeholder="Inches" step="0.25" min="0" id="tick-length-minor"></input>
 					</br>
 					<label>Subminor Tick Length</label>
-					<input type="number" placeholder="Inches" step="0.25" id="tick-length-subminor"></input>
+					<input type="number" placeholder="Inches" step="0.25" min="0" id="tick-length-subminor"></input>
 					</br>
 					<label>Text Offset</label>
-					<input type="number" placeholder="Inches" step="0.25" id="text-position"></input>
+					<input type="number" placeholder="Inches" step="0.25" min="0" id="text-position"></input>
 				</form>
 				<button type="button" id="show-hide">Show dial</button>
-				<canvas id="dial-generator-canvas" "height: 0px" "width: 0px"></canvas>
+				<canvas id="dial-generator-canvas"></canvas>
+			</div>
+
+			<div id="torque-calculator">
+				<h3>Torque Calculator</h3>
+				<p>Enter values for three of the following fields and select appropriate units to calculate the missing value.</p>
+				<form>
+					<label>Torque</label>
+					<input type="number" placeholder="Torque" step="0.05" min="0" id="torque"></input>
+					<button type="button" id="torque-units">in-oz.</button>
+					</br>
+					<label>Length</label>
+					<input type="number" placeholder="Length" step="0.01" min="0" id="length"></input>
+					<button type="button" id="length-units">inches</button>
+					</br>
+					<label>Diameter</label>
+					<input type="number" placeholder="Diameter" step="0.001" min="0" id="diameter"></input>
+					<button type="button" id="diameter-units">inches</button>
+					</br>
+					<label>Angle</label>
+					<input type="number" placeholder="Angle" step="1.00" min="0" id="angle"></input>
+					<button type="button" id="angle-units">degrees</button>
+					</br>
+				</form>
+				<p id="output"></p>
 			</div>
 		</div>
 	</body>
@@ -209,8 +219,8 @@
 <script src="jquery.min.js"></script>
 <script src="nav.js"></script>
 <!-- <script src="smoothscroll.js"></script> -->
-<script src="background.js"></script>
-<script src="utilities-rpm-timer.js"></script>
-<script src="utilities-torque-calculator.js"></script>
+<!-- <script src="background.js"></script> -->
+<script src="utilities-rpm-calculator.js"></script>
 <script src="utilities-balsa-density-calculator.js"></script>
 <script src="utilities-dial-generator.js"></script>
+<script src="utilities-torque-calculator.js"></script>
