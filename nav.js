@@ -29,7 +29,7 @@ $(document).ready(function() {
 			currentPage = "general";
 		}
 	});
-	$('.nav-utilities, .nav-utilities-rpm-timer, .nav-utilities-torque, .nav-utilities-balsa-density, .nav-utilities-dial').click(function() {
+	$('.nav-utilities, .nav-utilities-rpm-timer, .nav-utilities-balsa-density, .nav-utilities-dial, .nav-utilities-torque').click(function() {
 		if(currentPage != "utilities") {
 			resetNav();
 			$('.utilities').fadeTo(fadeOut, 0, function(){ $(this).css('display', 'block'); }).fadeTo(fadeIn, 1);
