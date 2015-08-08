@@ -1,6 +1,9 @@
 var seconds = 0;
 var freq = 10; //measured in milliseconds
-$('#timer').val("0.000 seconds");
+$('#rpm-timer #timer').val("0.000 seconds");
+
+var audioElement = document.createElement('audio');
+audioElement.setAttribute('src', 'audio.mp3');
 
 $('#rpm-timer #start-stop').click(function() {
 	if($(this).html() == "Start") {
@@ -9,6 +12,7 @@ $('#rpm-timer #start-stop').click(function() {
 	else {
 		$(this).html("Start");
 	}
+	audioElement.play();
 });
 function rpm_calculator() {
 	if($('#rpm-timer #rotations').val() >= 0) {
@@ -18,7 +22,7 @@ function rpm_calculator() {
 }
 $('#rpm-timer #clear').click(function() {
 	seconds = 0;
-	$('#timer').val("0.000 seconds");
+	$('#rpm-timer #timer').val("0.000 seconds");
 	$('#rpm-timer #start-stop').html("Start");
 	$('#rpm-timer #output').html("");
 });
@@ -33,7 +37,7 @@ $('#rpm-timer #timer').bind('keyup', function() {
 function showRemaining() {
 	if($('#rpm-timer #start-stop').html() == "Stop") {
 		seconds += freq/1000;
-		$('#timer').val(seconds.toFixed(3) + " seconds");
+		$('#rpm-timer #timer').val(seconds.toFixed(3) + " seconds");
 	}
 }
 setInterval(showRemaining, freq);
