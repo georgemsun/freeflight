@@ -87,7 +87,7 @@ var drawDial = function() {
 };
 $(document).ready(function() {
 	drawDial();
-	$('#dial-generator form').bind('keyup mouseup', function() {
+	function dialUpdate() {
 		if($('#dial-generator #major').val() > 0) major = $('#dial-generator #major').val();
 		else major = 1;
 		if($('#dial-generator #minor').val() > 0) minor = $('#dial-generator #minor').val();
@@ -99,9 +99,9 @@ $(document).ready(function() {
 
 		if($('#dial-generator #radius').val() > 0) circle_radius = $('#dial-generator #radius').val() * 96;
 		if($('#dial-generator #hole-diameter').val() > 0) hole_diameter = $('#dial-generator #hole-diameter').val() * 96;
-		if($('#dial-generator #tick-length-major').val() > 0) tick_length_major = $('#dial-generator #tick-length-major').val() * 96;
-		if($('#dial-generator #tick-length-minor').val() > 0) tick_length_minor = $('#dial-generator #tick-length-minor').val() * 96;
-		if($('#dial-generator #tick-length-subminor').val() > 0) tick_length_subminor = $('#dial-generator #tick-length-subminor').val() * 96;
+		if($('#dial-generator #tick-length-major').val() > 0) tick_length_major = $('#dial-generator #tick-length-major').val() * 96 * 2;
+		if($('#dial-generator #tick-length-minor').val() > 0) tick_length_minor = $('#dial-generator #tick-length-minor').val() * 96 * 2;
+		if($('#dial-generator #tick-length-subminor').val() > 0) tick_length_subminor = $('#dial-generator #tick-length-subminor').val() * 96 * 2;
 		if($('#dial-generator #text-position').val() > 0) text_position = $('#dial-generator #text-position').val() * 96;
 
 		circle_radius_major = circle_radius - tick_length_major;
@@ -109,5 +109,6 @@ $(document).ready(function() {
 		circle_radius_subminor = circle_radius - tick_length_subminor;
 		circle_radius_text = circle_radius - text_position;
 		drawDial();
-	});
+	}
+	setInterval(dialUpdate, 10);
 });
