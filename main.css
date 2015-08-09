@@ -1,6 +1,6 @@
 body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -21,9 +21,9 @@ body {
 .tagline {
 	position: relative;
 	width: auto;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 50px;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 2.5rem;
 	text-align: center;
 	font-weight: bold;
 	background-color: rgba(240, 240, 240, 1);
@@ -37,10 +37,10 @@ body {
 }
 
 .nav {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	overflow: auto;
-	font-size: 18px;
+	font-size: 0.9rem;
 }
 
 .nav #nav-head {
@@ -51,13 +51,13 @@ body {
 .nav li {
 	list-style: none;
 	float: left;
-	margin-right: 10px;
+	margin-right: 0.5rem;
 }
 
 .nav li a:link, .nav li a:visited {
 	display: block;
 	text-decoration: none;
-	padding: 10px;
+	padding: 0.5rem;
 	color: gray;
 }
 
@@ -72,7 +72,7 @@ body {
 	margin: 0;
 	padding: 0;
 	z-index: 1;
-	font-size: 15px;
+	font-size: 0.75rem;
 }
 
 .nav li ul li {
@@ -84,8 +84,8 @@ body {
 	width: auto;
 	background-color: rgba(255, 255, 255, 0.9);
 	color: black;
-	padding-right: 50px;
-	min-width: 250px;
+	padding-right: 2.5rem;
+	min-width: 12.5rem;
 	-webkit-transition: background-color 0.2s; /* Safari */
 	transition: background-color 0.2s;
 }
@@ -97,21 +97,21 @@ body {
 }
 
 .container {
-	padding-left: 100px;
-	padding-right: 100px;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-left: 5rem;
+	padding-right: 5rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 
 h3 {
-	font-size: 30px;
-	margin-top: -40px;
-	padding-top: 80px;
-	margin-bottom: 10px;
+	font-size: 1.5rem;
+	margin-top: -2rem;
+	padding-top: 4rem;
+	margin-bottom: 0.5rem;
 }
 
 p, b, label {
-	font-size: 18px;
+	font-size: 0.9rem;
 }
 
 a:link, a:visited {
@@ -128,8 +128,8 @@ label {
 }
 
 input, button, select {
-	font-size: 15px;
-	padding: 8px;
+	font-size: 0.75rem;
+	padding: 0.4rem;
 	border-radius: 3px;
 	border: 1px solid rgba(0,0,0,0.1);
 	-webkit-appearance: none;
@@ -154,7 +154,7 @@ button:focus {
 	/*border: 1px solid rgba(0,0,0,0.5);*/
 }
 label, input, button, select {
-	margin-top: 5px;
+	margin-top: 0.25rem;
 }
 
 .home, .indoor-duration, .olympiad, .utilities {
