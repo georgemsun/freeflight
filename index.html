@@ -1,5 +1,4 @@
 <!-- To do:
-- make dial generator more responsive
 - fix tick length and text distance to measure not twice the amount
  -->
 
@@ -33,9 +32,9 @@
 
 		<!-- <div class="tagline">George's Free Flight Resources</div> -->
 
-		<div class="container menu" style="padding-top: 0px; padding-bottom: 0px">
+		<div class="container menu" style="padding-top: 0; padding-bottom: 0">
 			<ul class="nav">
-				<li><a id="nav-head" href="#" class="nav-home" style="padding-left: 0px">Home</a></li>
+				<li><a id="nav-head" href="#" class="nav-home" style="padding-left: 0">Home</a></li>
 				<li><a id="nav-head" href="#" class="nav-general">General Resources</a>
 					<ul>
 						<li><a href="#articles" class="nav-general-articles smoothscroll">Articles and Guides</a></li>
@@ -78,8 +77,7 @@
 				<p><a href="http://www.easybuiltmodels.com/parts.htm" target="_blank">Easy Built Models by David Niedzielski</a>: kits, tissue paper, wood, glue, knives, mats, engines, books, sanding tools, rubber, propellers and accessories, magnets, wire, wheels, winders, poles
 				<p><a href="http://freedomflightmodels.com/paypal.htm" target="_blank">Freedom Flight Models by Dave Ziegler</a>: kits and parts for Science Olympiad's Elastic Launched Glider, Wright Stuff, and Helicopters
 				<p><a href="http://www.cstsales.com/products.html" target="_blank">CST Sales: The Composites Store</a>: carbon fiber products, aramid fiber/kevlar, adhesives, etc.
-				<style> .general a { font-weight: bold; }
-				a.anchor{display: block; position: relative; top: -250px; visibility: hidden;}</style>
+				<style>.general a { font-weight: bold; }</style>
 			</div>
 			<div id="photos">
 				<h3>Photos and Videos</h3>
@@ -143,7 +141,7 @@
 						<option>Extra Heavy (19+ lbs/cubic ft)</option>
 						<option>Enter your own value</option>
 					</select>
-					<input type="number" placeholder="lbs/cubic foot" step="0.5" min="0" id="density-enter" style="display: none; width: 140px"></input>
+					<input type="number" placeholder="lbs/cubic foot" step="0.5" min="0" id="density-enter" style="display: none; width: 7rem"></input>
 					</br>
 				</form>
 				<p id="output"></p>
@@ -166,7 +164,7 @@
 					<input type="number" placeholder="Number" step="0.05" min="0" id="major-increments"></input>
 					</br>
 				<!-- </form> -->
-				<!-- <form style="float: left; margin-left: 70px"> -->
+				<!-- <form style="float: left; margin-left: 3.5rem"> -->
 					<label>Circle Diameter</label>
 					<input type="number" placeholder="Inches" step="0.25" min="0" id="radius"></input>
 					</br>
@@ -219,7 +217,7 @@
 <script src="jquery.min.js"></script>
 <script src="nav.js"></script>
 <!-- <script src="smoothscroll.js"></script> -->
-<!-- <script src="background.js"></script> -->
+<script src="background.js"></script>
 <script src="utilities-rpm-calculator.js"></script>
 <script src="utilities-balsa-density-calculator.js"></script>
 <script src="utilities-dial-generator.js"></script>
